@@ -7,7 +7,6 @@ Unofficial PHP wrapper for [PayTR API](https://www.paytr.com/entegrasyon)
 ## Dependencies
 - PHP 5.6.36 or higher  
 - ext-curl  
-- ext-simplexml  
 - ext-json  
     
 

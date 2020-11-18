@@ -70,10 +70,10 @@ $createPaymentFormRequest->setNoInstallment(true);
 $createPaymentFormRequest->setMaxInstallment(0);  
 
 try {
-	$paymentForm = $createPaymentFormRequest->execute();
-	$paymentForm->printPaymentForm();
+  $paymentForm = $createPaymentFormRequest->execute();
+  $paymentForm->printPaymentForm();
 } catch(Exception $e) {
-	echo $e->getMessage();
+  echo $e->getMessage();
 }
 ```
 

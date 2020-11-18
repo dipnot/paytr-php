@@ -44,7 +44,12 @@ $createPaymentFormRequest->addProduct($product2);
 $createPaymentFormRequest->setTimeout(30);
 $createPaymentFormRequest->setNoInstallment(true);
 $createPaymentFormRequest->setMaxInstallment(0);
-$paymentForm = $createPaymentFormRequest->execute();
-$paymentForm->printPaymentForm();
+
+try {
+	$paymentForm = $createPaymentFormRequest->execute();
+	$paymentForm->printPaymentForm();
+} catch(Exception $e) {
+	echo $e->getMessage();
+}
 
 // Create hidden order with "$orderId", your logic or someting like that

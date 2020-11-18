@@ -3,6 +3,7 @@ namespace Dipnot\PayTR\Request;
 use Dipnot\PayTR\Model\Buyer;
 use Dipnot\PayTR\Model\Product;
 use Dipnot\PayTR\Request;
+use Exception;
 
 /**
  * Class CreatePaymentFormRequest
@@ -189,28 +190,30 @@ class CreatePaymentFormRequest extends Request
 	 * Makes request to the API
 	 *
 	 * @return $this
+	 *
+	 * @throws Exception
 	 */
 	function execute()
 	{
 		// Check if all required properties are set
 		if(!$this->getCurrency() || !$this->getBuyer() || !$this->getOrderId() || !$this->getSuccessUrl() || !$this->getFailedUrl() || !$this->getTimeout()) {
-			exit("Currency, Buyer, Order ID, Success URL, Failed URL and Timeout must be set.");
+			throw new Exception("Currency, Buyer, Order ID, Success URL, Failed URL and Timeout must be set.");
 		}
 
 		// Check if all required properties are set for Config
 		if(!$this->_config->isAllSet()) {
-			exit("Merchant ID, Merchant Key and Merchant Salt must be set for Config.");
+			throw new Exception("Merchant ID, Merchant Key and Merchant Salt must be set for Config.");
 		}
 
 		// Check if all required properties are set for Buyer
 		if(!$this->getBuyer()->isAllSet()) {
-			exit("E-Mail Address, Full Name, Address, Phone Number and IP Address must be set for Buyer.");
+			throw new Exception("E-Mail Address, Full Name, Address, Phone Number and IP Address must be set for Buyer.");
 		}
 
 		// Check if all required properties are set for each Product
 		foreach($this->getProducts() as $product) {
 			if(!$product->isAllSet()) {
-				exit("Title, Price and Quantity must set for each Product.");
+				throw new Exception("Title, Price and Quantity must set for each Product.");
 			}
 		}
 
@@ -242,7 +245,7 @@ class CreatePaymentFormRequest extends Request
 
 		// Show error message if status is not succeed
 		if($response->status !== "success") {
-			exit($response->reason);
+			throw new Exception($response->reason);
 		}
 
 		$this->_token = $response->token;
@@ -255,11 +258,13 @@ class CreatePaymentFormRequest extends Request
 	 * Must call execute() before printing the form
 	 *
 	 * @param string $id
+	 *
+	 * @throws Exception
 	 */
 	function printPaymentForm($id = "payTrIframe")
 	{
 		if(!$this->_token) {
-			exit("Must call execute() before printing the form.");
+			throw new Exception("Must call execute() before printing the form.");
 		}
 		?>
 		<script src="https://www.paytr.com/js/iframeResizer.min.js"></script>

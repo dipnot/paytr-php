@@ -3,6 +3,7 @@ namespace Dipnot\PayTR\Response;
 use Dipnot\PayTR\Exception\InvalidDataException;
 use Dipnot\PayTR\Exception\InvalidHashException;
 use Dipnot\PayTR\Response;
+use Exception;
 
 /**
  * Class GetPayment
@@ -32,10 +33,12 @@ class GetPayment extends Response
 	 * @return $this
 	 * @throws InvalidDataException
 	 * @throws InvalidHashException
+	 * @throws Exception
 	 */
 	function execute()
 	{
 		$this->checkData();
+		$this->checkStatus();
 		$this->checkHash();
 
 		return $this;
@@ -82,6 +85,16 @@ class GetPayment extends Response
 
 		if(!isset($this->getData()["hash"]) || !$this->getData()["hash"]) {
 			throw new InvalidDataException('"hash" must be set');
+		}
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	private function checkStatus()
+	{
+		if($this->getData()["status"] !== "success") {
+			throw new Exception("The payment transaction failed");
 		}
 	}
 

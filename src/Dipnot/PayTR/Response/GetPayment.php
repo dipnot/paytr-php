@@ -37,7 +37,7 @@ class GetPayment extends Response
 	 */
 	function execute()
 	{
-		$this->checkData();
+		$this->checkRequiredData();
 		$this->checkStatus();
 		$this->checkHash();
 
@@ -49,7 +49,7 @@ class GetPayment extends Response
 	 *
 	 * @throws InvalidDataException
 	 */
-	private function checkData()
+	private function checkRequiredData()
 	{
 		if(!$this->getData()) {
 			throw new InvalidDataException("Data cannot be empty");
@@ -65,14 +65,6 @@ class GetPayment extends Response
 
 		if(!isset($this->getData()["payment_type"]) || !$this->getData()["payment_type"]) {
 			throw new InvalidDataException('"payment_type" must be set');
-		}
-
-		if(!isset($this->getData()["failed_reason_code"]) || !$this->getData()["failed_reason_code"]) {
-			throw new InvalidDataException('"failed_reason_code" must be set');
-		}
-
-		if(!isset($this->getData()["failed_reason_msg"]) || !$this->getData()["failed_reason_msg"]) {
-			throw new InvalidDataException('"failed_reason_msg" must be set');
 		}
 
 		if(!isset($this->getData()["status"]) || !$this->getData()["status"]) {

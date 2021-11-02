@@ -263,17 +263,38 @@ class CreatePaymentFormRequest extends Request
 	 */
 	function printPaymentForm($id = "payTrIframe")
 	{
-		if(!$this->_token) {
-			throw new Exception("Must call execute() before printing the form.");
-		}
-		?>
-		<script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
-		<iframe src="https://www.paytr.com/odeme/guvenli/<?= $this->_token ?>"
-		        id="<?= $id ?>"
-		        style="width:100%"></iframe>
-		<script>iFrameResize({}, "#<?=$id?>");</script>
-		<?php
+		echo $this->getPaymentForm($id);
 	}
+
+    /**
+     * Returns HTML payment form with token from the API
+     * Must call execute() before printing the form
+     *
+     * @param string $id
+     *
+     * @return string
+     *
+     * @throws Exception
+     */
+    function getPaymentForm($id = "payTrIframe")
+    {
+        if(!$this->_token) {
+            throw new Exception("Must call execute() before printing the form.");
+        }
+
+        return '
+            <script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
+            <iframe src="https://www.paytr.com/odeme/guvenli/' . $this->_token . '" id="' . $id . '" style="width:100%"></iframe>
+            <script>
+                const paymentIframe = document.getElementById("' . $id . '");
+                if (paymentIframe) {
+                    paymentIframe.addEventListener("load", function () {
+                        iFrameResize({}, "#' . $id . '");
+                    });
+                }
+            </script>
+        ';
+    }
 
 	/**
 	 * Generates user_basket

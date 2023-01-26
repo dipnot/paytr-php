@@ -3,7 +3,6 @@ namespace Dipnot\PayTR\Model;
 
 /**
  * Class Product
- * @package Dipnot\PayTR\Model
  */
 class Product
 {
@@ -36,8 +35,6 @@ class Product
 	}
 
 	/**
-	 * Sets the price by rounding
-	 *
 	 * @param float $price
 	 */
 	function setPrice($price)
@@ -62,8 +59,6 @@ class Product
 	}
 
 	/**
-	 * Helper to check if all required properties are set
-	 *
 	 * @return bool
 	 */
 	function isAllSet()

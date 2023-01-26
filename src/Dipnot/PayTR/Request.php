@@ -3,7 +3,6 @@ namespace Dipnot\PayTR;
 
 /**
  * Class Request
- * @package Dipnot\PayTR
  */
 class Request
 {
@@ -13,8 +12,6 @@ class Request
 	protected $_client;
 
 	/**
-	 * Request constructor
-	 *
 	 * @param Config $config
 	 */
 	function __construct($config)
@@ -24,8 +21,6 @@ class Request
 	}
 
 	/**
-	 * Creates HttpClient based on the test mode
-	 *
 	 * @return HttpClient
 	 */
 	private function createHttpClient()

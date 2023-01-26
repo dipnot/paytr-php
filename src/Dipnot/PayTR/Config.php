@@ -3,7 +3,6 @@ namespace Dipnot\PayTR;
 
 /**
  * Class Config
- * @package Dipnot\PayTR
  */
 class Config
 {
@@ -94,8 +93,6 @@ class Config
 	}
 
 	/**
-	 * Helper to check if all required properties are set
-	 *
 	 * @return bool
 	 */
 	function isAllSet()

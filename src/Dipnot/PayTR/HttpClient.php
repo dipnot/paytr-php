@@ -3,7 +3,6 @@ namespace Dipnot\PayTR;
 
 /**
  * Class HttpClient
- * @package Dipnot\PayTR
  */
 class HttpClient
 {
@@ -16,8 +15,6 @@ class HttpClient
 	private $_curl;
 
 	/**
-	 * HttpClient constructor
-	 *
 	 * @param string $baseUrl
 	 */
 	function __construct($baseUrl)
@@ -27,8 +24,6 @@ class HttpClient
 	}
 
 	/**
-	 * Makes HTTP GET request
-	 *
 	 * @param string $uri
 	 * @param mixed  $body
 	 *
@@ -42,8 +37,6 @@ class HttpClient
 	*/
 
 	/**
-	 * Makes HTTP POST request
-	 *
 	 * @param string $uri
 	 * @param mixed  $body
 	 *
@@ -55,8 +48,6 @@ class HttpClient
 	}
 
 	/**
-	 * Makes HTTP DELETE request
-	 *
 	 * @param string $uri
 	 * @param mixed  $body
 	 *
@@ -70,8 +61,6 @@ class HttpClient
 	*/
 
 	/**
-	 * Makes HTTP PUT request
-	 *
 	 * @param string $uri
 	 * @param mixed  $body
 	 *
@@ -85,8 +74,6 @@ class HttpClient
 	*/
 
 	/**
-	 * Makes HTTP request
-	 *
 	 * @param string $method
 	 * @param string $uri
 	 * @param mixed  $body
@@ -110,8 +97,6 @@ class HttpClient
 	}
 
 	/**
-	 * Parses JSON response
-	 *
 	 * @param mixed $response
 	 *
 	 * @return mixed

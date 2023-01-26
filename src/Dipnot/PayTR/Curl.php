@@ -3,13 +3,10 @@ namespace Dipnot\PayTR;
 
 /**
  * Class Curl
- * @package Dipnot\PayTR
  */
 class Curl
 {
 	/**
-	 * Creates and executes cURL
-	 *
 	 * @param string $url
 	 * @param array  $options
 	 *

@@ -3,9 +3,8 @@ namespace Dipnot\PayTR\Model;
 
 /**
  * Class Currency
- * @package Dipnot\PayTR\Model
  *
- * @see     https://www.paytr.com/sikca-sorulan-sorular > C.1.7
+ * @see https://www.paytr.com/sikca-sorulan-sorular > C.1.7
  */
 class Currency
 {

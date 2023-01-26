@@ -7,7 +7,6 @@ use Exception;
 
 /**
  * Class CreatePaymentFormRequest
- * @package Dipnot\PayTR\Request
  */
 class CreatePaymentFormRequest extends Request
 {
@@ -49,8 +48,6 @@ class CreatePaymentFormRequest extends Request
 	}
 
 	/**
-	 * Sets the price by multiplying by 100
-	 *
 	 * @param float $amount
 	 */
 	function setAmount($amount)
@@ -187,30 +184,24 @@ class CreatePaymentFormRequest extends Request
 	}
 
 	/**
-	 * Makes request to the API
-	 *
 	 * @return $this
 	 *
 	 * @throws Exception
 	 */
 	function execute()
 	{
-		// Check if all required properties are set
 		if(!$this->getCurrency() || !$this->getBuyer() || !$this->getOrderId() || !$this->getSuccessUrl() || !$this->getFailedUrl() || !$this->getTimeout()) {
 			throw new Exception("Currency, Buyer, Order ID, Success URL, Failed URL and Timeout must be set.");
 		}
 
-		// Check if all required properties are set for Config
 		if(!$this->_config->isAllSet()) {
 			throw new Exception("Merchant ID, Merchant Key and Merchant Salt must be set for Config.");
 		}
 
-		// Check if all required properties are set for Buyer
 		if(!$this->getBuyer()->isAllSet()) {
 			throw new Exception("E-Mail Address, Full Name, Address, Phone Number and IP Address must be set for Buyer.");
 		}
 
-		// Check if all required properties are set for each Product
 		foreach($this->getProducts() as $product) {
 			if(!$product->isAllSet()) {
 				throw new Exception("Title, Price and Quantity must set for each Product.");

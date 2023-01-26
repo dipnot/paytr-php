@@ -7,7 +7,6 @@ use Exception;
 
 /**
  * Class GetPayment
- * @package Dipnot\PayTR\Response
  */
 class GetPayment extends Response
 {
@@ -45,8 +44,6 @@ class GetPayment extends Response
 	}
 
 	/**
-	 * Check if the data contains required keys
-	 *
 	 * @throws InvalidDataException
 	 */
 	private function checkRequiredData()
@@ -91,8 +88,6 @@ class GetPayment extends Response
 	}
 
 	/**
-	 * Check if sent hash valid
-	 *
 	 * @throws InvalidHashException
 	 */
 	private function checkHash()

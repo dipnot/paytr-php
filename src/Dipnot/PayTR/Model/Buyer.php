@@ -3,7 +3,6 @@ namespace Dipnot\PayTR\Model;
 
 /**
  * Class Buyer
- * @package Dipnot\PayTR\Model
  */
 class Buyer
 {
@@ -94,8 +93,6 @@ class Buyer
 	}
 
 	/**
-	 * Helper to check if all required properties are set
-	 *
 	 * @return bool
 	 */
 	function isAllSet()

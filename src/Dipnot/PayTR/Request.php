@@ -17,7 +17,7 @@ class Request
 	 *
 	 * @param Config $config
 	 */
-	function __construct(Config $config)
+	function __construct($config)
 	{
 		$this->_config = $config;
 		$this->_client = $this->createHttpClient();

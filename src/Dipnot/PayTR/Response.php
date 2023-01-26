@@ -14,7 +14,7 @@ class Response
 	 *
 	 * @param Config $config
 	 */
-	function __construct(Config $config)
+	function __construct($config)
 	{
 		$this->_config = $config;
 	}

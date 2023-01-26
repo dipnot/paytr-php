@@ -6,7 +6,7 @@ namespace Dipnot\PayTR\Model;
  *
  * @see https://www.paytr.com/sikca-sorulan-sorular > C.1.7
  */
-class Currency
+abstract class Currency
 {
 	const TL = "TRY";
 	const USD = "USD";

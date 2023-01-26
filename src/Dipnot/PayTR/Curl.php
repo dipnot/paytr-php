@@ -12,7 +12,7 @@ class Curl
 	 *
 	 * @return bool|string
 	 */
-	function execute($url, $options)
+    public function execute($url, $options)
 	{
 		$curl = curl_init($url);
 		curl_setopt_array($curl, $options);

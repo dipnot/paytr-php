@@ -17,7 +17,7 @@ class HttpClient
 	/**
 	 * @param string $baseUrl
 	 */
-	function __construct($baseUrl)
+    public function __construct($baseUrl)
 	{
 		$this->_baseUrl = $baseUrl;
 		$this->_curl = new Curl();
@@ -42,7 +42,7 @@ class HttpClient
 	 *
 	 * @return mixed
 	 */
-	function post($uri, $body)
+    public function post($uri, $body)
 	{
 		return $this->makeHttpRequest(self::METHOD_POST, $uri, $body);
 	}

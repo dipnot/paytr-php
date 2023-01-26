@@ -15,7 +15,7 @@ class Buyer
 	/**
 	 * @return string
 	 */
-	function getEmailAddress()
+	public function getEmailAddress()
 	{
 		return $this->_emailAddress;
 	}
@@ -23,7 +23,7 @@ class Buyer
 	/**
 	 * @param string $emailAddress
 	 */
-	function setEmailAddress($emailAddress)
+	public function setEmailAddress($emailAddress)
 	{
 		$this->_emailAddress = $emailAddress;
 	}
@@ -31,7 +31,7 @@ class Buyer
 	/**
 	 * @return string
 	 */
-	function getFullName()
+	public function getFullName()
 	{
 		return $this->_fullName;
 	}
@@ -39,7 +39,7 @@ class Buyer
 	/**
 	 * @param string $fullName
 	 */
-	function setFullName($fullName)
+	public function setFullName($fullName)
 	{
 		$this->_fullName = $fullName;
 	}
@@ -47,7 +47,7 @@ class Buyer
 	/**
 	 * @return string
 	 */
-	function getAddress()
+    public function getAddress()
 	{
 		return $this->_address;
 	}
@@ -55,7 +55,7 @@ class Buyer
 	/**
 	 * @param string $address
 	 */
-	function setAddress($address)
+    public function setAddress($address)
 	{
 		$this->_address = $address;
 	}
@@ -63,7 +63,7 @@ class Buyer
 	/**
 	 * @return string
 	 */
-	function getPhoneNumber()
+    public function getPhoneNumber()
 	{
 		return $this->_phoneNumber;
 	}
@@ -71,7 +71,7 @@ class Buyer
 	/**
 	 * @param string $phoneNumber
 	 */
-	function setPhoneNumber($phoneNumber)
+    public function setPhoneNumber($phoneNumber)
 	{
 		$this->_phoneNumber = $phoneNumber;
 	}
@@ -79,7 +79,7 @@ class Buyer
 	/**
 	 * @return string
 	 */
-	function getIpAddress()
+    public function getIpAddress()
 	{
 		return $this->_ipAddress;
 	}
@@ -87,7 +87,7 @@ class Buyer
 	/**
 	 * @param string $ipAddress
 	 */
-	function setIpAddress($ipAddress)
+    public function setIpAddress($ipAddress)
 	{
 		$this->_ipAddress = $ipAddress;
 	}
@@ -95,7 +95,7 @@ class Buyer
 	/**
 	 * @return bool
 	 */
-	function isAllSet()
+    public function isAllSet()
 	{
 		return $this->getEmailAddress() &&
 			$this->getFullName() &&

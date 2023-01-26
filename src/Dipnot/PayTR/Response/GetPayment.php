@@ -15,7 +15,7 @@ class GetPayment extends Response
 	/**
 	 * @return array
 	 */
-	function getData()
+    public function getData()
 	{
 		return $this->_data;
 	}
@@ -23,7 +23,7 @@ class GetPayment extends Response
 	/**
 	 * @param array $data
 	 */
-	function setData($data)
+    public function setData($data)
 	{
 		$this->_data = $data;
 	}
@@ -34,7 +34,7 @@ class GetPayment extends Response
 	 * @throws InvalidHashException
 	 * @throws Exception
 	 */
-	function execute()
+    public function execute()
 	{
 		$this->checkRequiredData();
 		$this->checkStatus();

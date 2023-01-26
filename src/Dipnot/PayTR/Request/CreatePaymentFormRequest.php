@@ -26,7 +26,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return string
 	 */
-	function getCurrency()
+    public function getCurrency()
 	{
 		return $this->_currency;
 	}
@@ -34,7 +34,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param string $currency
 	 */
-	function setCurrency($currency)
+    public function setCurrency($currency)
 	{
 		$this->_currency = $currency;
 	}
@@ -42,7 +42,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return float
 	 */
-	function getAmount()
+    public function getAmount()
 	{
 		return $this->_amount;
 	}
@@ -50,7 +50,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param float $amount
 	 */
-	function setAmount($amount)
+    public function setAmount($amount)
 	{
 		$this->_amount = round($amount, 2) * 100;
 	}
@@ -58,7 +58,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return string
 	 */
-	function getOrderId()
+    public function getOrderId()
 	{
 		return $this->_orderId;
 	}
@@ -66,7 +66,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param string $orderId
 	 */
-	function setOrderId($orderId)
+    public function setOrderId($orderId)
 	{
 		$this->_orderId = $orderId;
 	}
@@ -74,7 +74,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return string
 	 */
-	function getSuccessUrl()
+    public function getSuccessUrl()
 	{
 		return $this->_successUrl;
 	}
@@ -82,7 +82,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param string $successUrl
 	 */
-	function setSuccessUrl($successUrl)
+    public function setSuccessUrl($successUrl)
 	{
 		$this->_successUrl = $successUrl;
 	}
@@ -90,7 +90,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return string
 	 */
-	function getFailedUrl()
+    public function getFailedUrl()
 	{
 		return $this->_failedUrl;
 	}
@@ -98,7 +98,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param string $failedUrl
 	 */
-	function setFailedUrl($failedUrl)
+    public function setFailedUrl($failedUrl)
 	{
 		$this->_failedUrl = $failedUrl;
 	}
@@ -106,7 +106,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return Product[]
 	 */
-	function getProducts()
+    public function getProducts()
 	{
 		return $this->_products;
 	}
@@ -114,7 +114,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param Product $product
 	 */
-	function addProduct($product)
+    public function addProduct($product)
 	{
 		$this->_products[] = $product;
 	}
@@ -122,7 +122,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return int
 	 */
-	function getTimeout()
+    public function getTimeout()
 	{
 		return $this->_timeout;
 	}
@@ -130,7 +130,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param int $timeout
 	 */
-	function setTimeout($timeout)
+    public function setTimeout($timeout)
 	{
 		$this->_timeout = $timeout;
 	}
@@ -138,7 +138,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return Buyer
 	 */
-	function getBuyer()
+    public function getBuyer()
 	{
 		return $this->_buyer;
 	}
@@ -146,7 +146,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param Buyer $buyer
 	 */
-	function setBuyer($buyer)
+    public function setBuyer($buyer)
 	{
 		$this->_buyer = $buyer;
 	}
@@ -154,7 +154,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return bool
 	 */
-	function isNoInstallment()
+    public function isNoInstallment()
 	{
 		return $this->_noInstallment;
 	}
@@ -162,7 +162,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param bool $noInstallment
 	 */
-	function setNoInstallment($noInstallment)
+    public function setNoInstallment($noInstallment)
 	{
 		$this->_noInstallment = $noInstallment;
 	}
@@ -170,7 +170,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @return int
 	 */
-	function getMaxInstallment()
+    public function getMaxInstallment()
 	{
 		return $this->_maxInstallment;
 	}
@@ -178,7 +178,7 @@ class CreatePaymentFormRequest extends Request
 	/**
 	 * @param int $maxInstallment
 	 */
-	function setMaxInstallment($maxInstallment)
+    public function setMaxInstallment($maxInstallment)
 	{
 		$this->_maxInstallment = $maxInstallment;
 	}
@@ -188,7 +188,7 @@ class CreatePaymentFormRequest extends Request
 	 *
 	 * @throws Exception
 	 */
-	function execute()
+    public function execute()
 	{
 		if(!$this->getCurrency() || !$this->getBuyer() || !$this->getOrderId() || !$this->getSuccessUrl() || !$this->getFailedUrl() || !$this->getTimeout()) {
 			throw new Exception("Currency, Buyer, Order ID, Success URL, Failed URL and Timeout must be set.");
@@ -252,7 +252,7 @@ class CreatePaymentFormRequest extends Request
 	 *
 	 * @throws Exception
 	 */
-	function printPaymentForm($id = "payTrIframe")
+    public function printPaymentForm($id = "payTrIframe")
 	{
 		echo $this->getPaymentForm($id);
 	}
@@ -267,7 +267,7 @@ class CreatePaymentFormRequest extends Request
      *
      * @throws Exception
      */
-    function getPaymentForm($id = "payTrIframe")
+    public function getPaymentForm($id = "payTrIframe")
     {
         if(!$this->_token) {
             throw new Exception("Must call execute() before printing the form.");

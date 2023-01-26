@@ -15,7 +15,7 @@ class Config
 	/**
 	 * @return string
 	 */
-	function getMerchantId()
+    public function getMerchantId()
 	{
 		return $this->_merchantId;
 	}
@@ -23,7 +23,7 @@ class Config
 	/**
 	 * @param string $merchantId
 	 */
-	function setMerchantId($merchantId)
+    public function setMerchantId($merchantId)
 	{
 		$this->_merchantId = $merchantId;
 	}
@@ -31,7 +31,7 @@ class Config
 	/**
 	 * @return string
 	 */
-	function getMerchantKey()
+    public function getMerchantKey()
 	{
 		return $this->_merchantKey;
 	}
@@ -39,7 +39,7 @@ class Config
 	/**
 	 * @param string $merchantKey
 	 */
-	function setMerchantKey($merchantKey)
+    public function setMerchantKey($merchantKey)
 	{
 		$this->_merchantKey = $merchantKey;
 	}
@@ -47,7 +47,7 @@ class Config
 	/**
 	 * @return string
 	 */
-	function getMerchantSalt()
+    public function getMerchantSalt()
 	{
 		return $this->_merchantSalt;
 	}
@@ -55,7 +55,7 @@ class Config
 	/**
 	 * @param string $merchantSalt
 	 */
-	function setMerchantSalt($merchantSalt)
+    public function setMerchantSalt($merchantSalt)
 	{
 		$this->_merchantSalt = $merchantSalt;
 	}
@@ -63,7 +63,7 @@ class Config
 	/**
 	 * @return bool
 	 */
-	function isDebugMode()
+    public function isDebugMode()
 	{
 		return $this->_debugMode;
 	}
@@ -71,7 +71,7 @@ class Config
 	/**
 	 * @param bool $debugMode
 	 */
-	function setDebugMode($debugMode)
+    public function setDebugMode($debugMode)
 	{
 		$this->_debugMode = $debugMode;
 	}
@@ -79,7 +79,7 @@ class Config
 	/**
 	 * @return bool
 	 */
-	function isTestMode()
+    public function isTestMode()
 	{
 		return $this->_testMode;
 	}
@@ -87,7 +87,7 @@ class Config
 	/**
 	 * @param bool $testMode
 	 */
-	function setTestMode($testMode)
+    public function setTestMode($testMode)
 	{
 		$this->_testMode = $testMode;
 	}
@@ -95,7 +95,7 @@ class Config
 	/**
 	 * @return bool
 	 */
-	function isAllSet()
+    public function isAllSet()
 	{
 		return $this->getMerchantId() &&
 			$this->getMerchantKey() &&

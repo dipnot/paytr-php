@@ -13,7 +13,7 @@ class Product
 	/**
 	 * @return string
 	 */
-	function getTitle()
+    public function getTitle()
 	{
 		return $this->_title;
 	}
@@ -21,7 +21,7 @@ class Product
 	/**
 	 * @param string $title
 	 */
-	function setTitle($title)
+    public function setTitle($title)
 	{
 		$this->_title = $title;
 	}
@@ -29,7 +29,7 @@ class Product
 	/**
 	 * @return float
 	 */
-	function getPrice()
+    public function getPrice()
 	{
 		return $this->_price;
 	}
@@ -37,7 +37,7 @@ class Product
 	/**
 	 * @param float $price
 	 */
-	function setPrice($price)
+    public function setPrice($price)
 	{
 		$this->_price = round($price, 2);
 	}
@@ -45,7 +45,7 @@ class Product
 	/**
 	 * @return int
 	 */
-	function getQuantity()
+    public function getQuantity()
 	{
 		return $this->_quantity;
 	}
@@ -53,7 +53,7 @@ class Product
 	/**
 	 * @param int $quantity
 	 */
-	function setQuantity($quantity)
+    public function setQuantity($quantity)
 	{
 		$this->_quantity = $quantity;
 	}
@@ -61,7 +61,7 @@ class Product
 	/**
 	 * @return bool
 	 */
-	function isAllSet()
+    public function isAllSet()
 	{
 		return $this->getTitle() &&
 			$this->getPrice() &&

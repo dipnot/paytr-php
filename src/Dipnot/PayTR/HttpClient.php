@@ -6,10 +6,7 @@ namespace Dipnot\PayTR;
  */
 class HttpClient
 {
-	// const METHOD_GET = "GET";
 	const METHOD_POST = "POST";
-	// const METHOD_PUT = "PUT";
-	// const METHOD_DELETE = "DELETE";
 
 	private $_baseUrl;
 	private $_curl;
@@ -29,49 +26,10 @@ class HttpClient
 	 *
 	 * @return mixed
 	 */
-	/*
-	function get($uri, $body)
-	{
-		return $this->makeHttpRequest(self::METHOD_GET, $uri, $body);
-	}
-	*/
-
-	/**
-	 * @param string $uri
-	 * @param mixed  $body
-	 *
-	 * @return mixed
-	 */
     public function post($uri, $body)
 	{
 		return $this->makeHttpRequest(self::METHOD_POST, $uri, $body);
 	}
-
-	/**
-	 * @param string $uri
-	 * @param mixed  $body
-	 *
-	 * @return mixed
-	 */
-	/*
-	function delete($uri, $body)
-	{
-		return $this->makeHttpRequest(self::METHOD_DELETE, $uri, $body);
-	}
-	*/
-
-	/**
-	 * @param string $uri
-	 * @param mixed  $body
-	 *
-	 * @return mixed
-	 */
-	/*
-	function put($uri, $body)
-	{
-		return $this->makeHttpRequest(self::METHOD_PUT, $uri, $body);
-	}
-	*/
 
 	/**
 	 * @param string $method

@@ -278,12 +278,12 @@ class CreatePaymentFormRequest extends Request
         $response = $this->_client->post("", $postData);
 
         if(!isset($response->status) || !$response->status) {
-            throw new Exception("The 'status' field is missing or empty in the PayTR response.");
+            throw new Exception('The "status" field is missing or empty in the PayTR response.');
         }
 
         if($response->status !== "success") {
             if(!isset($response->reason) || !$response->reason) {
-                throw new Exception("The 'status' is 'success', but the 'reason' field is missing or empty in the PayTR response.");
+                throw new Exception('The "status" is "success", but the "reason" field is missing or empty in the PayTR response.');
             }
 
             throw new Exception($response->reason);

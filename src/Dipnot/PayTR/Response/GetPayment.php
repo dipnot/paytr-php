@@ -95,10 +95,13 @@ class GetPayment extends Response
      */
     private function checkHash()
     {
-        $hashHmac = hash_hmac("sha256", $this->getData()["merchant_oid"] . $this->_config->getMerchantSalt() . $this->getData()["status"] . $this->getData()["total_amount"], $this->_config->getMerchantKey(), true);
+        $data = $this->getData();
+        $config = $this->_config;
+
+        $hashHmac = hash_hmac("sha256", $data["merchant_oid"] . $config->getMerchantSalt() . $data["status"] . $data["total_amount"], $config->getMerchantKey(), true);
         $hash = base64_encode($hashHmac);
 
-        if($hash !== $this->getData()["hash"]) {
+        if($hash !== $data["hash"]) {
             throw new InvalidHashException("Invalid hash");
         }
     }

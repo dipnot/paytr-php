@@ -10,6 +10,9 @@ use Exception;
  */
 class GetPayment extends Response
 {
+    /**
+     * @var array
+     */
     private $_data;
 
     /**

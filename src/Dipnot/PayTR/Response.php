@@ -6,6 +6,9 @@ namespace Dipnot\PayTR;
  */
 class Response
 {
+    /**
+     * @var Config
+     */
     protected $_config;
 
     /**

@@ -8,7 +8,14 @@ class HttpClient
 {
     const METHOD_POST = "POST";
 
+    /**
+     * @var string
+     */
     private $_baseUrl;
+
+    /**
+     * @var Curl
+     */
     private $_curl;
 
     /**

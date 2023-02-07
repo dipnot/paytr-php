@@ -6,10 +6,29 @@ namespace Dipnot\PayTR;
  */
 class Config
 {
+    /**
+     * @var string
+     */
     private $_merchantId = "";
+
+    /**
+     * @var string
+     */
     private $_merchantKey = "";
+
+    /**
+     * @var string
+     */
     private $_merchantSalt = "";
+
+    /**
+     * @var bool
+     */
     private $_debugMode = true;
+
+    /**
+     * @var bool
+     */
     private $_testMode = true;
 
     /**

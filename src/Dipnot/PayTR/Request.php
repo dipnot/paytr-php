@@ -8,7 +8,14 @@ class Request
 {
     const API_ENDPOINT = "https://www.paytr.com/odeme/api/get-token";
 
+    /**
+     * @var Config
+     */
     protected $_config;
+
+    /**
+     * @var HttpClient
+     */
     protected $_client;
 
     /**

@@ -6,8 +6,19 @@ namespace Dipnot\PayTR\Model;
  */
 class Product
 {
+    /**
+     * @var string
+     */
     private $_title = "";
+
+    /**
+     * @var float
+     */
     private $_price = 0;
+
+    /**
+     * @var int
+     */
     private $_quantity = 0;
 
     /**

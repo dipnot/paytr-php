@@ -6,10 +6,29 @@ namespace Dipnot\PayTR\Model;
  */
 class Buyer
 {
+    /**
+     * @var string
+     */
     private $_emailAddress = "";
+
+    /**
+     * @var string
+     */
     private $_fullName = "";
+
+    /**
+     * @var string
+     */
     private $_address = "";
+
+    /**
+     * @var string
+     */
     private $_phoneNumber = "";
+
+    /**
+     * @var string
+     */
     private $_ipAddress = "";
 
     /**

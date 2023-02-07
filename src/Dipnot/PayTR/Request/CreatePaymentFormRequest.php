@@ -1,6 +1,7 @@
 <?php
 namespace Dipnot\PayTR\Request;
 use Dipnot\PayTR\Model\Buyer;
+use Dipnot\PayTR\Model\Currency;
 use Dipnot\PayTR\Model\Product;
 use Dipnot\PayTR\Request;
 use Exception;
@@ -10,17 +11,59 @@ use Exception;
  */
 class CreatePaymentFormRequest extends Request
 {
+    /**
+     * @var string
+     */
     private $_token;
 
+    /**
+     * @var Currency|string
+     */
     private $_currency = "";
+
+    /**
+     * @var float
+     */
     private $_amount = 0;
+
+    /**
+     * @var string
+     */
     private $_orderId = "";
+
+    /**
+     * @var string
+     */
     private $_successUrl = "";
+
+    /**
+     * @var string
+     */
     private $_failedUrl = "";
-    private $_products = null;
+
+    /**
+     * @var Product[]
+     */
+    private $_products = [];
+
+    /**
+     * @var int
+     */
     private $_timeout = 20;
+
+    /**
+     * @var ?Buyer
+     */
     private $_buyer = null;
+
+    /**
+     * @var int
+     */
     private $_noInstallment = 0;
+
+    /**
+     * @var int
+     */
     private $_maxInstallment = 0;
 
     /**
@@ -136,7 +179,7 @@ class CreatePaymentFormRequest extends Request
     }
 
     /**
-     * @return Buyer
+     * @return ?Buyer
      */
     public function getBuyer()
     {
@@ -152,7 +195,7 @@ class CreatePaymentFormRequest extends Request
     }
 
     /**
-     * @return bool
+     * @return int
      */
     public function isNoInstallment()
     {

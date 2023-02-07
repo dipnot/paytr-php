@@ -4,11 +4,12 @@
     "version": "1.1.0",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://www.dipnot.com.tr/",
+    "homepage": "https://github.com/dipnot/paytr-php",
     "keywords": [
-        "paytr",
-        "payment system",
-        "api"
+        "composer",
+        "php-library",
+        "payment-gateway",
+        "paytr"
     ],
     "authors": [
         {

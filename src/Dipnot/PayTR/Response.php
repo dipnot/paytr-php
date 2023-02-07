@@ -4,7 +4,7 @@ namespace Dipnot\PayTR;
 /**
  * Class Response
  */
-class Response
+abstract class Response
 {
     /**
      * @var Config

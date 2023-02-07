@@ -4,7 +4,7 @@ namespace Dipnot\PayTR;
 /**
  * Class Request
  */
-class Request
+abstract class Request
 {
     const API_ENDPOINT = "https://www.paytr.com/odeme/api/get-token";
 

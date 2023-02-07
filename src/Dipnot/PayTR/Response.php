@@ -3,19 +3,19 @@ namespace Dipnot\PayTR;
 
 /**
  * Class Response
- * @package Dipnot\PayTR
  */
-class Response
+abstract class Response
 {
-	protected $_config;
+    /**
+     * @var Config
+     */
+    protected $_config;
 
-	/**
-	 * Response constructor
-	 *
-	 * @param Config $config
-	 */
-	function __construct(Config $config)
-	{
-		$this->_config = $config;
-	}
+    /**
+     * @param Config $config
+     */
+    public function __construct($config)
+    {
+        $this->_config = $config;
+    }
 }

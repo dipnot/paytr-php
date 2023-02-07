@@ -1,26 +1,31 @@
-
 # PayTR API Wrapper for PHP
-[![Latest Stable Version](https://poser.pugx.org/dipnot/paytr-php/v)](https://packagist.org/packages/dipnot/paytr-php) [![Total Downloads](https://poser.pugx.org/dipnot/paytr-php/downloads)](https://packagist.org/packages/dipnot/paytr-php)  
-  
-Unofficial PHP wrapper for [PayTR API](https://www.paytr.com/entegrasyon)     
-  
-## Dependencies
-- PHP 5.6.36 or higher  
-- ext-curl  
-- ext-json  
-    
 
-## Installation  
-You can install via [Composer](https://getcomposer.org/).  
+[![Latest Stable Version](https://poser.pugx.org/dipnot/paytr-php/v)](https://packagist.org/packages/dipnot/paytr-php) [![Total Downloads](https://poser.pugx.org/dipnot/paytr-php/downloads)](https://packagist.org/packages/dipnot/paytr-php)
 
-    composer require dipnot/paytr-php
+This is an unofficial PHP wrapper for the [PayTR API](https://www.paytr.com/entegrasyon)
 
-  ## Usage
-You can see the full example in [examples](https://github.com/dipnot/paytr-php/tree/main/examples) folder.
+## Requirements
+
+- PHP 5.6.36 or higher
+- ext-curl
+- ext-json
+
+## Installation
+
+To install, run the following command using [Composer](https://getcomposer.org/).
+
+```sh
+composer require dipnot/paytr-php
+```
+
+## Examples
+
+Full usage examples can be found in the [examples](https://github.com/dipnot/paytr-php/tree/main/examples) folder.
+
 ### Config
-All actions are needs a Config.
 
-You must set real merchant info even if debug or test mode enabled.
+Before making any requests, a `Config` object must be created and set with real merchant information.
+
 ```php
 use Dipnot\PayTR\Config;
 
@@ -30,7 +35,8 @@ $config->setMerchantKey("TODO");
 $config->setMerchantSalt("TODO");
 ```
 
-### Create payment form
+### Creating a payment form
+
 ```php
 use Dipnot\PayTR\Model\Buyer;  
 use Dipnot\PayTR\Model\Currency;  
@@ -77,7 +83,8 @@ try {
 }
 ```
 
-### Get payment (Hook)
+### Getting a payment (Webhook)
+
 ```php
 use Dipnot\PayTR\Response\GetPayment;  
   
@@ -91,6 +98,7 @@ try {
   exit($exception->getMessage());
 }
 ```
-    
+
 ## License
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-%232fdcff)](https://github.com/dipnot/paytr-php/blob/main/LICENSE)

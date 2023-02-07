@@ -1,6 +1,6 @@
 {
     "name": "dipnot/paytr-php",
-    "description": "Unofficial PayTR API Wrapper",
+    "description": "Unofficial PayTR API Wrapper for PHP",
     "version": "1.1.0",
     "type": "library",
     "license": "MIT",

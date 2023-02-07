@@ -1,28 +1,29 @@
 {
-  "name": "dipnot/paytr-php",
-  "description": "Unofficial PayTR API Wrapper",
-  "type": "library",
-  "license": "MIT",
-  "homepage": "https://www.dipnot.com.tr/",
-  "keywords": [
-	"paytr",
-	"payment system",
-	"api"
-  ],
-  "authors": [
-	{
-	  "name": "Dipnot and Contributors",
-	  "homepage": "https://github.com/dipnot/paytr-php/contributors"
-	}
-  ],
-  "require": {
-	"php": ">=5.6.36",
-	"ext-curl": "*",
-	"ext-json": "*"
-  },
-  "autoload": {
-	"psr-4": {
-	  "Dipnot\\": "src/Dipnot/"
-	}
-  }
+    "name": "dipnot/paytr-php",
+    "description": "Unofficial PayTR API Wrapper",
+    "version": "1.1.0",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://www.dipnot.com.tr/",
+    "keywords": [
+        "paytr",
+        "payment system",
+        "api"
+    ],
+    "authors": [
+        {
+            "name": "Dipnot and Contributors",
+            "homepage": "https://github.com/dipnot/paytr-php/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.36",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dipnot\\": "src/Dipnot/"
+        }
+    }
 }

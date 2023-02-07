@@ -57,9 +57,9 @@ class CreatePaymentFormRequest extends Request
     private $_buyer = null;
 
     /**
-     * @var int
+     * @var bool
      */
-    private $_noInstallment = 0;
+    private $_noInstallment = false;
 
     /**
      * @var int
@@ -195,7 +195,7 @@ class CreatePaymentFormRequest extends Request
     }
 
     /**
-     * @return int
+     * @return bool
      */
     public function isNoInstallment()
     {

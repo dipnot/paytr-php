@@ -6,99 +6,99 @@ namespace Dipnot\PayTR;
  */
 class Config
 {
-	private $_merchantId = "";
-	private $_merchantKey = "";
-	private $_merchantSalt = "";
-	private $_debugMode = true;
-	private $_testMode = true;
+    private $_merchantId = "";
+    private $_merchantKey = "";
+    private $_merchantSalt = "";
+    private $_debugMode = true;
+    private $_testMode = true;
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getMerchantId()
-	{
-		return $this->_merchantId;
-	}
+    {
+        return $this->_merchantId;
+    }
 
-	/**
-	 * @param string $merchantId
-	 */
+    /**
+     * @param string $merchantId
+     */
     public function setMerchantId($merchantId)
-	{
-		$this->_merchantId = $merchantId;
-	}
+    {
+        $this->_merchantId = $merchantId;
+    }
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getMerchantKey()
-	{
-		return $this->_merchantKey;
-	}
+    {
+        return $this->_merchantKey;
+    }
 
-	/**
-	 * @param string $merchantKey
-	 */
+    /**
+     * @param string $merchantKey
+     */
     public function setMerchantKey($merchantKey)
-	{
-		$this->_merchantKey = $merchantKey;
-	}
+    {
+        $this->_merchantKey = $merchantKey;
+    }
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getMerchantSalt()
-	{
-		return $this->_merchantSalt;
-	}
+    {
+        return $this->_merchantSalt;
+    }
 
-	/**
-	 * @param string $merchantSalt
-	 */
+    /**
+     * @param string $merchantSalt
+     */
     public function setMerchantSalt($merchantSalt)
-	{
-		$this->_merchantSalt = $merchantSalt;
-	}
+    {
+        $this->_merchantSalt = $merchantSalt;
+    }
 
-	/**
-	 * @return bool
-	 */
+    /**
+     * @return bool
+     */
     public function isDebugMode()
-	{
-		return $this->_debugMode;
-	}
+    {
+        return $this->_debugMode;
+    }
 
-	/**
-	 * @param bool $debugMode
-	 */
+    /**
+     * @param bool $debugMode
+     */
     public function setDebugMode($debugMode)
-	{
-		$this->_debugMode = $debugMode;
-	}
+    {
+        $this->_debugMode = $debugMode;
+    }
 
-	/**
-	 * @return bool
-	 */
+    /**
+     * @return bool
+     */
     public function isTestMode()
-	{
-		return $this->_testMode;
-	}
+    {
+        return $this->_testMode;
+    }
 
-	/**
-	 * @param bool $testMode
-	 */
+    /**
+     * @param bool $testMode
+     */
     public function setTestMode($testMode)
-	{
-		$this->_testMode = $testMode;
-	}
+    {
+        $this->_testMode = $testMode;
+    }
 
-	/**
-	 * @return bool
-	 */
+    /**
+     * @return bool
+     */
     public function isAllSet()
-	{
-		return $this->getMerchantId() &&
-			$this->getMerchantKey() &&
-			$this->getMerchantSalt();
-	}
+    {
+        return $this->getMerchantId() &&
+            $this->getMerchantKey() &&
+            $this->getMerchantSalt();
+    }
 }

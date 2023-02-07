@@ -19,12 +19,12 @@ $getPayment = new GetPayment($config);
 $getPayment->setData($_GET); // We use GET. Use $_POST for production
 
 try {
-	$payment = $getPayment->execute();
+    $payment = $getPayment->execute();
 
-	// Get order by using "$payment->getData()["merchant_oid"]", send e-mail or someting like that
+    // Get order by using "$payment->getData()["merchant_oid"]", send e-mail or someting like that
 
-	exit("OK"); // PayTR needs "OK" to understand if it is success
+    exit("OK"); // PayTR needs "OK" to understand if it is success
 } catch(Exception $exception) {
-	// You can also see this message in PayTR panel if you want to debug
-	exit($exception->getMessage());
+    // You can also see this message in PayTR panel if you want to debug
+    exit($exception->getMessage());
 }

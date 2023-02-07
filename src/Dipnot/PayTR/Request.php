@@ -6,25 +6,25 @@ namespace Dipnot\PayTR;
  */
 class Request
 {
-	const API_ENDPOINT = "https://www.paytr.com/odeme/api/get-token";
+    const API_ENDPOINT = "https://www.paytr.com/odeme/api/get-token";
 
-	protected $_config;
-	protected $_client;
+    protected $_config;
+    protected $_client;
 
-	/**
-	 * @param Config $config
-	 */
+    /**
+     * @param Config $config
+     */
     public function __construct($config)
-	{
-		$this->_config = $config;
-		$this->_client = $this->createHttpClient();
-	}
+    {
+        $this->_config = $config;
+        $this->_client = $this->createHttpClient();
+    }
 
-	/**
-	 * @return HttpClient
-	 */
-	private function createHttpClient()
-	{
-		return new HttpClient(self::API_ENDPOINT);
-	}
+    /**
+     * @return HttpClient
+     */
+    private function createHttpClient()
+    {
+        return new HttpClient(self::API_ENDPOINT);
+    }
 }

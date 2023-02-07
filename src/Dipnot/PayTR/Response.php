@@ -6,13 +6,13 @@ namespace Dipnot\PayTR;
  */
 class Response
 {
-	protected $_config;
+    protected $_config;
 
-	/**
-	 * @param Config $config
-	 */
+    /**
+     * @param Config $config
+     */
     public function __construct($config)
-	{
-		$this->_config = $config;
-	}
+    {
+        $this->_config = $config;
+    }
 }

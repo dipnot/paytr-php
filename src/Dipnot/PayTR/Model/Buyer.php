@@ -6,101 +6,101 @@ namespace Dipnot\PayTR\Model;
  */
 class Buyer
 {
-	private $_emailAddress = "";
-	private $_fullName = "";
-	private $_address = "";
-	private $_phoneNumber = "";
-	private $_ipAddress = "";
+    private $_emailAddress = "";
+    private $_fullName = "";
+    private $_address = "";
+    private $_phoneNumber = "";
+    private $_ipAddress = "";
 
-	/**
-	 * @return string
-	 */
-	public function getEmailAddress()
-	{
-		return $this->_emailAddress;
-	}
+    /**
+     * @return string
+     */
+    public function getEmailAddress()
+    {
+        return $this->_emailAddress;
+    }
 
-	/**
-	 * @param string $emailAddress
-	 */
-	public function setEmailAddress($emailAddress)
-	{
-		$this->_emailAddress = $emailAddress;
-	}
+    /**
+     * @param string $emailAddress
+     */
+    public function setEmailAddress($emailAddress)
+    {
+        $this->_emailAddress = $emailAddress;
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getFullName()
-	{
-		return $this->_fullName;
-	}
+    /**
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->_fullName;
+    }
 
-	/**
-	 * @param string $fullName
-	 */
-	public function setFullName($fullName)
-	{
-		$this->_fullName = $fullName;
-	}
+    /**
+     * @param string $fullName
+     */
+    public function setFullName($fullName)
+    {
+        $this->_fullName = $fullName;
+    }
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getAddress()
-	{
-		return $this->_address;
-	}
+    {
+        return $this->_address;
+    }
 
-	/**
-	 * @param string $address
-	 */
+    /**
+     * @param string $address
+     */
     public function setAddress($address)
-	{
-		$this->_address = $address;
-	}
+    {
+        $this->_address = $address;
+    }
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getPhoneNumber()
-	{
-		return $this->_phoneNumber;
-	}
+    {
+        return $this->_phoneNumber;
+    }
 
-	/**
-	 * @param string $phoneNumber
-	 */
+    /**
+     * @param string $phoneNumber
+     */
     public function setPhoneNumber($phoneNumber)
-	{
-		$this->_phoneNumber = $phoneNumber;
-	}
+    {
+        $this->_phoneNumber = $phoneNumber;
+    }
 
-	/**
-	 * @return string
-	 */
+    /**
+     * @return string
+     */
     public function getIpAddress()
-	{
-		return $this->_ipAddress;
-	}
+    {
+        return $this->_ipAddress;
+    }
 
-	/**
-	 * @param string $ipAddress
-	 */
+    /**
+     * @param string $ipAddress
+     */
     public function setIpAddress($ipAddress)
-	{
-		$this->_ipAddress = $ipAddress;
-	}
+    {
+        $this->_ipAddress = $ipAddress;
+    }
 
-	/**
-	 * @return bool
-	 */
+    /**
+     * @return bool
+     */
     public function isAllSet()
-	{
-		return $this->getEmailAddress() &&
-			$this->getFullName() &&
-			$this->getAddress() &&
-			$this->getPhoneNumber() &&
-			$this->getIpAddress();
-	}
+    {
+        return $this->getEmailAddress() &&
+            $this->getFullName() &&
+            $this->getAddress() &&
+            $this->getPhoneNumber() &&
+            $this->getIpAddress();
+    }
 }

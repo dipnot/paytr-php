@@ -29,51 +29,52 @@ Before making any requests, a `Config` object must be created and set with real 
 ```php
 use Dipnot\PayTR\Config;
 
-$config = new Config();  
-$config->setMerchantId("TODO");  
-$config->setMerchantKey("TODO");  
+$config = new Config();
+$config->setMerchantId("TODO");
+$config->setMerchantKey("TODO");
 $config->setMerchantSalt("TODO");
 ```
 
 ### Creating a payment form
 
 ```php
-use Dipnot\PayTR\Model\Buyer;  
-use Dipnot\PayTR\Model\Currency;  
-use Dipnot\PayTR\Model\Product;  
+use Dipnot\PayTR\Model\Buyer;
+use Dipnot\PayTR\Model\Currency;
+use Dipnot\PayTR\Model\Product;
 use Dipnot\PayTR\Request\CreatePaymentFormRequest;
 
-$buyer = new Buyer();  
-$buyer->setEmailAddress("email@address.com");  
-$buyer->setFullName("Full Name");  
-$buyer->setAddress("The World");  
-$buyer->setPhoneNumber("0000000000");  
-$buyer->setIpAddress("0.0.0.0");  
-  
-$product1 = new Product();  
-$product1->setTitle("Computer");  
-$product1->setPrice(4000);  
-$product1->setQuantity(1);  
-  
-$product2 = new Product();  
-$product2->setTitle("Phone");  
-$product2->setPrice(5000);  
-$product2->setQuantity(2);  
-  
-$orderId = "UNIQUEORDERCODE" . time();  
-  
-$createPaymentFormRequest = new CreatePaymentFormRequest($config);  
-$createPaymentFormRequest->setBuyer($buyer);  
-$createPaymentFormRequest->setCurrency(Currency::TL);  
-$createPaymentFormRequest->setAmount(9000);  
-$createPaymentFormRequest->setOrderId($orderId);  
-$createPaymentFormRequest->setSuccessUrl("http://localhost/paytr-php/examples/order.php?orderId={$orderId}&status=success");  
-$createPaymentFormRequest->setFailedUrl("http://localhost/paytr-php/examples/order.php?orderId={$orderId}&status=failed");  
-$createPaymentFormRequest->addProduct($product1);  
-$createPaymentFormRequest->addProduct($product2);  
-$createPaymentFormRequest->setTimeout(30);  
-$createPaymentFormRequest->setNoInstallment(true);  
-$createPaymentFormRequest->setMaxInstallment(0);  
+$buyer = new Buyer();
+$buyer->setEmailAddress("email@address.com");
+$buyer->setFullName("Full Name");
+$buyer->setAddress("The World");
+$buyer->setPhoneNumber("0000000000");
+$buyer->setIpAddress("0.0.0.0");
+
+$product1 = new Product();
+$product1->setTitle("Computer");
+$product1->setPrice(4000);
+$product1->setQuantity(1);
+
+$product2 = new Product();
+$product2->setTitle("Phone");
+$product2->setPrice(5000);
+$product2->setQuantity(2);
+
+$orderId = "UNIQUEORDERCODE" . time();
+
+$createPaymentFormRequest = new CreatePaymentFormRequest($config);
+$createPaymentFormRequest->setBuyer($buyer);
+$createPaymentFormRequest->setCurrency(Currency::TL);
+$createPaymentFormRequest->setAmount(9000);
+$createPaymentFormRequest->setOrderId($orderId);
+$createPaymentFormRequest->setSuccessUrl("http://localhost/paytr-php/examples/order.php?orderId={$orderId}&status=success");
+$createPaymentFormRequest->setFailedUrl("http://localhost/paytr-php/examples/order.php?orderId={$orderId}&status=failed");
+$createPaymentFormRequest->addProduct($product1);
+$createPaymentFormRequest->addProduct($product2);
+// $createPaymentFormRequest->addProducts([$product1, $product2]); // You can add multiple products at once
+$createPaymentFormRequest->setTimeout(30);
+$createPaymentFormRequest->setNoInstallment(true);
+$createPaymentFormRequest->setMaxInstallment(0);
 
 try {
   $paymentForm = $createPaymentFormRequest->execute();
@@ -86,15 +87,15 @@ try {
 ### Getting a payment (Webhook)
 
 ```php
-use Dipnot\PayTR\Response\GetPayment;  
-  
-$getPayment = new GetPayment($config);  
-$getPayment->setData($_POST);  
-  
-try {  
-  $payment = $getPayment->execute();  
+use Dipnot\PayTR\Response\GetPayment;
+
+$getPayment = new GetPayment($config);
+$getPayment->setData($_POST);
+
+try {
+  $payment = $getPayment->execute();
   exit("OK");
-} catch(Exception $exception) {   
+} catch(Exception $exception) {
   exit($exception->getMessage());
 }
 ```

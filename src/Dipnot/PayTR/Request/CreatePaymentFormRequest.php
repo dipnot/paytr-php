@@ -163,6 +163,16 @@ class CreatePaymentFormRequest extends Request
     }
 
     /**
+     * @param Product[] $products
+     */
+    public function addProducts($products)
+    {
+        foreach($products as $product) {
+            $this->addProduct($product);
+        }
+    }
+
+    /**
      * @return int
      */
     public function getTimeout()

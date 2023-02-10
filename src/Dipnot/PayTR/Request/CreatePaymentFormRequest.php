@@ -348,6 +348,20 @@ class CreatePaymentFormRequest extends Request
     }
 
     /**
+     * @return string
+     *
+     * @throws Exception
+     */
+    public function getPaymentToken()
+    {
+        if(!$this->_token) {
+            throw new Exception("Must call execute() before getting the token.");
+        }
+
+        return $this->_token;
+    }
+
+    /**
      * Generates user_basket
      *
      * @param Product[] $products

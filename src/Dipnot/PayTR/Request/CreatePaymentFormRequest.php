@@ -2,6 +2,7 @@
 namespace Dipnot\PayTR\Request;
 use Dipnot\PayTR\Model\Buyer;
 use Dipnot\PayTR\Model\Currency;
+use Dipnot\PayTR\Model\Language;
 use Dipnot\PayTR\Model\Product;
 use Dipnot\PayTR\Request;
 use Exception;
@@ -20,6 +21,11 @@ class CreatePaymentFormRequest extends Request
      * @var Currency|string
      */
     private $_currency = "";
+
+    /**
+     * @var Language|string
+     */
+    private $_language = Language::TR;
 
     /**
      * @var float
@@ -80,6 +86,22 @@ class CreatePaymentFormRequest extends Request
     public function setCurrency($currency)
     {
         $this->_currency = $currency;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLanguage()
+    {
+        return $this->_language;
+    }
+
+    /**
+     * @param string $language
+     */
+    public function setLanguage($language)
+    {
+        $this->_language = $language;
     }
 
     /**
@@ -266,6 +288,7 @@ class CreatePaymentFormRequest extends Request
             "merchant_key" => $this->_config->getMerchantKey(),
             "merchant_salt" => $this->_config->getMerchantSalt(),
             "currency" => $this->getCurrency(),
+            "lang" => $this->getLanguage(),
             "email" => $this->getBuyer()->getEmailAddress(),
             "user_name" => $this->getBuyer()->getFullName(),
             "user_address" => $this->getBuyer()->getAddress(),

@@ -40,6 +40,7 @@ $config->setMerchantSalt("TODO");
 ```php
 use Dipnot\PayTR\Model\Buyer;
 use Dipnot\PayTR\Model\Currency;
+use Dipnot\PayTR\Model\Language;
 use Dipnot\PayTR\Model\Product;
 use Dipnot\PayTR\Request\CreatePaymentFormRequest;
 
@@ -65,6 +66,7 @@ $orderId = "UNIQUEORDERCODE" . time();
 $createPaymentFormRequest = new CreatePaymentFormRequest($config);
 $createPaymentFormRequest->setBuyer($buyer);
 $createPaymentFormRequest->setCurrency(Currency::TL);
+$createPaymentFormRequest->setLanguage(Language::TR);
 $createPaymentFormRequest->setAmount(9000);
 $createPaymentFormRequest->setOrderId($orderId);
 $createPaymentFormRequest->setSuccessUrl("http://localhost/paytr-php/examples/order.php?orderId={$orderId}&status=success");
